@@ -1,0 +1,97 @@
+
+{% extends 'main.html' %}
+{% block content %}
+
+<!--  Header End -->
+<style>
+  input[type="text"]{
+    padding: 5px;
+    border: 0.5px solid #cccccc;
+    width:100%
+  }
+  input[type="text"]:focus{
+    padding: 5.5px;
+    border: 0.5px solid #333333;
+    width:100%
+  }
+
+  select{
+    padding:7px;
+    width: 30%;
+    border-radius: 8px;
+  }
+</style>
+
+<div class="container-fluid">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title fw-semibold mb-4">Register Patient</h5>
+        <div class="card">
+          <div class="card-body">
+
+            <form method="POST" action="">
+              {% csrf_token %}
+
+              <div class="mb-3">
+                <label class="form-label">Patient ID</label>
+                <br>
+                {{form.patient_id}}
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Name</label>
+                <br>
+                {{form.name}}
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Initials</label>
+                <br>
+                {{form.initials}}
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Sex</label>
+                <br>
+                {{form.sex}}
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Address</label>
+                <br>
+                {{form.address}}
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Post Code</label>
+                <br>
+                {{form.post_code}}
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Admission</label>
+                <br>
+                {{form.admission}}
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Date of Birth</label>
+                <br>
+                {{form.dob}}
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Ward</label>
+                <br>
+                {{form.ward}}
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Patients Next Of Kin</label>
+                <br>
+                {{form.pat_next_kin}}
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+
+ 
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+      

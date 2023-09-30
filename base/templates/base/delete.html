@@ -1,0 +1,48 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<style>
+    .delete_form{
+        margin: 20% auto;
+        width:60%;
+        border:1px solid #0056b3;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+    }
+    .delete_form form{
+        padding: 20px;
+    }
+    .delete_form p{
+        font-size: 1.5em;
+    }
+    .delete_form form a{
+        font-size: 1.3em;
+    }
+    .delete_form span{
+        margin-left: 220px;
+    }
+    .delete_form input[type="submit"]{
+        padding: 7px 10px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        color: white;
+    }
+
+    .delete_form input[type="submit"]:hover{
+       
+        background-color: #0056b3;
+        border: none;
+    }
+
+</style>
+
+<div class="delete_form">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <p>Are you sure you want to delete {{obj}}?</p>
+        <a href="{{request.META.HTTP_REFERER}}">Go Back</a>
+        <span></span>
+        <input type="submit" value="Confirm">
+    </form>
+</div>
+{% endblock content %}

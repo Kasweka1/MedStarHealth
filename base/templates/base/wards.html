@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{% block content %}
+     
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <ul class="navbar-nav">
+            <li class="nav-item d-block d-xl-none">
+              <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-icon-hover" href="javascript:void(0)">
+                <h3>Wards</h3>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Table Stuff -->
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Ward Id</th>
+              <th scope="col">Ward Name</th>
+              <th scope="col">Number of Beds</th>
+              <th scope="col">Nurse in Charge</th>
+              <th scope="col">Ward Type</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            {% for ward in wards %}
+            <tr>
+              <th scope="row">{{ward.ward_id}}</th>
+              <td>{{ward.ward_name}}</td>
+              <td>{{ward.number_beds}}</td>
+              <td>{{ward.nurse_in_charge}}</td>
+              <td>{{ward.ward_type}}</td>
+              
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+        
+      {% endblock %}
